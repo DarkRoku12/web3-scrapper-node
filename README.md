@@ -148,3 +148,7 @@ So, I just went back to my comfort zone in TypeScript when everything works as e
    We could have: gather the first/next batch → store → update scanner status → either: (back to 1st step) or (append to CSV file).
    Another good and solid approach is instead of trying to get from blocks: 0-latest in the first wallet request, we can do batch them and resume it by limiting the scope to 2K~5k blocks.
    In either case, for an API to work well, then, we'd need to upgrade to →  check section `#### Endpoint results`.
+
+4. Logging, validation, error handling, auth: Granted, we have a basic logging, and some error handling, but in a real, distributed system, you'd probably want to include support for structured logging, meaningful error codes and messages, and whenever there is an input, there is data validation
+   For example, we may not only validate that an eth address is just a string, but a valid address, same with the chain id, equally if we're applying any filters that are customizable by the users, such filters must exist. If this is a public facing service, we may like to limit the actions a user
+   may do, or the data they see, along with quota rates, if applicable.
