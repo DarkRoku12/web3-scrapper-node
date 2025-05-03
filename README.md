@@ -142,3 +142,13 @@ So, I just went back to my comfort zone in TypeScript when everything works as e
 1. Rust / Go / C# server (microservice) for enhanced string manipulation, improving CSV delivery, since Python/Node.js are not the best players when it comes to CPU bound operations that also involve memory management. For example, in Python we may implement an 'Efficient String Concatenation',  and Node.js is good enough even without a proper string builder class. But even though, I'd resort to having a microservice in a more per formant language for this specific scenario.
 
 2. Use Envio.dev HyperSync queries to batch request transaction metadata that `alchemy_getAssetTransfers` misses.
+
+3. In the context of a CLI tool, we may stream to a file results directly for every alchemy 'loop' iteration, or to a database.
+   Instead of the flow we have now: gather all → store → convert to CSV → update scanner status.
+   We could have: gather the first/next batch → store → update scanner status → either: (back to 1st step) or (append to CSV file).
+   Another good and solid approach is instead of trying to get from blocks: 0-latest in the first wallet request, we can do batch them and resume it by limiting the scope to 2K~5k blocks.
+   In either case, for an API to work well, then, we'd need to upgrade to →  check section `#### Endpoint results`.
+
+4. Logging, validation, error handling, auth: Granted, we have a basic logging, and some error handling, but in a real, distributed system, you'd probably want to include support for structured logging, meaningful error codes and messages, and whenever there is an input, there is data validation
+   For example, we may not only validate that an eth address is just a string, but a valid address, same with the chain id, equally if we're applying any filters that are customizable by the users, such filters must exist. If this is a public facing service, we may like to limit the actions a user
+   may do, or the data they see, along with quota rates, if applicable.
