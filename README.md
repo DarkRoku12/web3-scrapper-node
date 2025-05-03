@@ -139,7 +139,7 @@ So, I just went back to my comfort zone in TypeScript when everything works as e
 
 ## Further enhancements.
 
-1. Rust / Go / C# server (microservice) for enhanced string manipulation, improving CSV delivery, since Python/Node.js are not the best players when it comes to CPU bound operations that also involve memory management. For example, in Python we may implement an 'Efficient String Concatenation',  and Node.js is good enough even without a proper string builder class. But even though, I'd resort to having a microservice in a more per formant language for this specific scenario.
+1. Rust / Go / C# server (microservice) for enhanced string manipulation, improving CSV delivery, since Python/Node.js are not the best players when it comes to CPU bound operations that also involve memory management. For example, in Python we may implement an 'Efficient String Concatenation' [example](https://waymoot.org/home/python_string/),  and Node.js is good enough even without a proper string builder class [ref](https://code.darkroku12.ovh/3-nodejs-string-concatenation/). But even though, I'd resort to having a microservice in a more per formant language for this specific scenario.
 
 2. Use Envio.dev HyperSync queries to batch request transaction metadata that `alchemy_getAssetTransfers` misses.
 
