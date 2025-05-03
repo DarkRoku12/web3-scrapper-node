@@ -8,7 +8,7 @@ services:
       - "7676:7676"
     environment:
       - NODE_ENV=production
-      - PG_URI=postgresql://postgres:password@postgres_db:65432/cointracker
+      - PG_URI=postgresql://postgres:password@postgres_db:5432/cointracker
       - ALCHEMY_KEY=--
     depends_on:
       - postgres_db

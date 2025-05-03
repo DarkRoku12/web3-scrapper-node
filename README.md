@@ -30,7 +30,7 @@ using the database specified in `PG_URI`.
 
 ### Docker
 
-- Build and tag image only: podman build --pull --rm -f "dockerfile" -t "web3_scrapper:latest" "." 
+- Build and tag image only: `podman build --pull --rm -f "dockerfile" -t "web3_scrapper:latest" "."`
 - Alternatively, run everything with `docker-compose up`.
 
 Remember to change the `docker-compose.yml` / `dockerfile` with your updated env variables.

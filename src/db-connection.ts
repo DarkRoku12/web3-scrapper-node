@@ -7,7 +7,7 @@ export const dialect = new Ky.PostgresDialect( {
   pool: new Pg.Pool( {
     max: 4,
     connectionString: Env.PG_URI,
-    ssl: Env.PG_URI!.includes( "localhost" ) ? false : { rejectUnauthorized: false },
+    ssl: false,
   } ),
 } );
 
